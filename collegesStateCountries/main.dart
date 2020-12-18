@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'colleges.dart';
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'ios Colleges States Countries Wonjung Song'),
+      home: MyHomePage(title: 'Colleges by Wonjung Song'),
     );
   }
 }
@@ -73,110 +74,147 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                CollegeButtons(
-                  collegename: 'WSU',
-                  college: Wsu(),
-                ),
-                CollegeButtons(
-                  collegename: 'OU',
-                  college: Ou(),
-                ),
-                CollegeButtons( // Wonjung Song
-                  collegename: 'OSU',
-                  college: Osu(),
-                ),
-                CollegeButtons(
-                  collegename: 'KU',
-                  college: Ku(),
-                ),
-                CollegeButtons(
-                  collegename: 'MIT',
-                  college: Mit(),
-                ),
-              ],
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                CollegeButtons(
-                  collegename: 'CUNY',
-                  college: Cuny(),
-                ),
-                CollegeButtons(
-                  collegename: 'NYU',
-                  college: Nyu(),
-                ),
-                CollegeButtons( // Wonjung Song
-                  collegename: 'OPSU',
-                  college: Opsu(),
-                ),
-                CollegeButtons(
-                  collegename: 'RICE',
-                  college: Rice(),
-                ),
-                CollegeButtons(
-                  collegename: 'BROWN',
-                  college: Brown(),
-                ),
-              ],
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                CollegeButtons(
-                  collegename: 'ISU',
-                  college: Isu(),
-                ),
-                CollegeButtons(
-                  collegename: 'DUKE', // Wonjung Song
-                  college: Duke(),
-                ),
-                CollegeButtons(
-                  collegename: 'UTULSA',
-                  college: Utulsa(),
-                ),
-                CollegeButtons(
-                  collegename: 'BC',
-                  college: Bc(),
-                ),
-                CollegeButtons(
-                  collegename: 'SUNY',
-                  college: Suny(),
-                ),
-              ],
-            )
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
-}
-
-class CollegeButtons extends StatelessWidget {
-  final String collegename;
-  final Widget college;
-  CollegeButtons({this.collegename, this.college});
-  @override //Wonjung.Song
-  Widget build(BuildContext context) {
-    return FlatButton(
-      child: Text(this.collegename),
-      onPressed: () => Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (BuildContext context) => college,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  FlatButton(
+                    //Wonjung Song
+                      onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (BuildContext context) => Wsu(),
+                          )),
+                      child: Text('WSU')),
+                  FlatButton(
+                    child: Text('OU'),
+                    onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => Ou(),
+                        )),
+                  ),
+                  FlatButton(
+                    child: Text('OSU'),
+                    onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => Osu(),
+                        )),
+                  ),
+                  FlatButton(
+                    child: Text('KU'),
+                    onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => Ku(),
+                        )),
+                  ),
+                  FlatButton(
+                    child: Text('MIT'),
+                    onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => Mit(),
+                        )),
+                  )
+                ],
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  //WonJung Song
+                  FlatButton(
+                    child: Text('CUNY'),
+                    onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => Cuny(),
+                        )),
+                  ),
+                  FlatButton(
+                    child: Text('NYU'),
+                    onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => Nyu(),
+                        )),
+                  ),
+                  FlatButton(
+                    child: Text('OPSU'),
+                    onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => Opsu(),
+                        )),
+                  ),
+                  FlatButton(
+                    child: Text('RICE'),
+                    onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => Rice(),
+                        )),
+                  ),
+                  FlatButton(
+                    child: Text('BROWN'),
+                    onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          //Wonjung Song
+                          builder: (BuildContext context) => Brown(),
+                        )),
+                  )
+                ],
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  FlatButton(
+                    child: Text('ISU'),
+                    onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => Isu(),
+                        )),
+                  ),
+                  FlatButton(
+                    child: Text('DUKE'),
+                    onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => Duke(),
+                        )),
+                  ),
+                  FlatButton(
+                    child: Text('UTULSA'),
+                    onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => Utulsa(),
+                        )),
+                  ),
+                  FlatButton(
+                    child: Text('BC'), //Wonjung Song
+                    onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => Bc(),
+                        )),
+                  ),
+                  FlatButton(
+                    child: Text('SUNY'),
+                    onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => Suny(),
+                        )),
+                  )
+                ],
+              ),
+            ],
           )),
     );
   }
